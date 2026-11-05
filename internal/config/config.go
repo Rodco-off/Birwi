@@ -91,6 +91,7 @@ func GetEnv[T EnvType](key string) (T, error) {
 		if err != nil {
 			return zero, fmt.Errorf("invalid uint value for %s: %w", key, err)
 		}
+
 		return any(uint(parsed)).(T), nil
 
 	default:

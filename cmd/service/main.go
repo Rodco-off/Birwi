@@ -5,6 +5,7 @@ import (
 
 	"github.com/Rodco-off/Birwi/internal/config"
 	"github.com/Rodco-off/Birwi/internal/db"
+	"github.com/Rodco-off/Birwi/internal/repository"
 )
 
 func main() {
@@ -16,4 +17,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	companyRepo := repository.NewCompanyRepository(conn)
+	companyReportRepo := repository.NewCompanyReportRepository(conn)
+
 }
